@@ -1,0 +1,8 @@
+<TouchableOpacity>
+    <View style={{flexDirection:'row', alignItems:'center'}}>
+        <View style={{padding: 4, borderWidth: 2, borderColor:'white'}}>
+            <View style={{width: 12, height: 12, backgroundColor:'white'}}></View>
+        </View>
+        <Text style={{color:'white', marginLeft: 16}}>Include current location</Text>
+    </View>
+</TouchableOpacity>
