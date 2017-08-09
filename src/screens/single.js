@@ -23,4 +23,4 @@ class Single extends Component {
     }
 }
 
-export { Single };
+export default Single;

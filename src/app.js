@@ -1,15 +1,46 @@
 import React, { Component } from 'react';
 import { View, Text } from 'react-native';
-import { Welcome, List, Form, Single } from './components';
+
+import Welcome from './screens/welcome';
+import List from './screens/list';
+import Form from './screens/form';
+import Single from './screens/single';
+
+import { connect } from 'react-redux';
+import * as actions from './actions';
 
 class App extends Component {
+
+    componentWillMount() {
+        this.props.getUser();
+    }
+
+    renderScreen = () => {
+        switch (this.props.screen) {
+            case "welcome":
+                return <Welcome />;
+            case "list":
+                return <List />;
+            case "single":
+                return <Single />;
+            case "form":
+                return <Form />;
+            default:
+                return <Welcome />;
+        }
+    }
+
     render() {
         return(
             <View style={{flex: 1}}>
-                <Welcome />
+                {this.renderScreen()}
             </View>
         );
     }
 }
 
-export default App;
+function mapStateToProps({ screen }) {
+    return screen;
+}
+
+export default connect(mapStateToProps, actions)(App);

@@ -1,5 +1,5 @@
 const INITIAL_STATE = {
-    notes: []
+    notes: [],
 }
 
 export default function(state = INITIAL_STATE, action) {

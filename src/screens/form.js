@@ -21,4 +21,4 @@ class Form extends Component {
     }
 }
 
-export { Form };
+export default Form;
