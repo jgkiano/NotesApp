@@ -8,7 +8,7 @@ class Welcome extends Component {
     renderError = () => {
         if(this.props.error) {
             return (
-                <Text style={{color:'white'}}>we need your name!</Text>
+                <Text style={{fontWeight:'bold', color:'white', fontSize:18, textAlign:'center'}}>We need your name!</Text>
             );
         }
         return (
@@ -21,7 +21,7 @@ class Welcome extends Component {
                 <Text style={{color: 'white', fontSize: 34, fontWeight: 'bold', marginTop: 32}}>WELCOME</Text>
                 <View style={{flex: 1, alignItems: 'center', justifyContent:'center'}}>
                     {this.renderError()}
-                    <TextInput placeholder="Your Awesome Name" style={{height: 25, width: 350, marginTop: 16}} onChangeText={(text) => this.props.changeText(text)} value={this.props.usernameInput}/>
+                    <TextInput placeholder="Your Awesome Name" style={{height: 25, width: 350, marginTop: 16, color:'white'}} onChangeText={(text) => this.props.changeText(text)} value={this.props.usernameInput}/>
                     <TouchableOpacity onPress={() => this.props.registerUser(this.props.usernameInput)}>
                         <Text style={{fontWeight:'bold', marginTop: 16, color:'white'}}>Get Started</Text>
                     </TouchableOpacity>

@@ -4,3 +4,4 @@ export const WELCOME_SCREEN = 'welcome_screen';
 export const USER_INPUT = 'user_input';
 export const REGISTER_SUCCESSFUL = 'register_successful';
 export const REGISTER_FAIL = 'register_fail';
+export const SINGLE_NOTE_SELECT = 'single_note_select';

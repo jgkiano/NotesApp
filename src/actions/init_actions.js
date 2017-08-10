@@ -7,6 +7,7 @@ import {
 
 export const getUser = () => async (dispatch) => {
     try {
+        // await AsyncStorage.removeItem('user');
         const user = await AsyncStorage.getItem('user');
         if (user) {
             dispatch({

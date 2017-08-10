@@ -16,6 +16,7 @@ class App extends Component {
     }
 
     renderScreen = () => {
+        console.log(this.props.screen);
         switch (this.props.screen) {
             case "welcome":
                 return <Welcome />;
@@ -26,7 +27,11 @@ class App extends Component {
             case "form":
                 return <Form />;
             default:
-                return <Welcome />;
+                return (
+                    <View style={{flex:1, justifyContent:'center', alignItems:'center'}}>
+                        <Text style={{color:'white', fontWeight:'bold', fontSize: 24}}>Loading...</Text>
+                    </View>
+                );
         }
     }
 

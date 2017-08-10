@@ -10,7 +10,7 @@ const INITIAL_STATE = {
 export default function( state = INITIAL_STATE, action ) {
     switch (action.type) {
         case USER_INPUT:
-            return { usernameInput: action.payload };
+            return { ...state, usernameInput: action.payload };
         case REGISTER_FAIL:
             return { ...state, error: true };
         default:
