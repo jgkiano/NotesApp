@@ -5,3 +5,5 @@ export const USER_INPUT = 'user_input';
 export const REGISTER_SUCCESSFUL = 'register_successful';
 export const REGISTER_FAIL = 'register_fail';
 export const SINGLE_NOTE_SELECT = 'single_note_select';
+export const EDIT_NOTE = 'edit_note';
+export const NEW_NOTE = 'new_note';

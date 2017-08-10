@@ -11,8 +11,8 @@ class Single extends Component {
             <ScrollView style={{flex: 1}}>
                 <View style={{flex: 1, padding: 32}}>
                     <Text style={{color: 'white', fontWeight:'bold', fontSize: 24}}>{this.props.note.title}</Text>
-                    <Text style={{color: 'white'}}>{moment(this.props.timestamp).format('dddd, MMMM Do YYYY, h:mm a')}</Text>
-                    <TouchableOpacity>
+                    <Text style={{color: 'white'}}>{moment(this.props.note.timestamp).format('dddd, MMMM Do YYYY, h:mm a')}</Text>
+                    <TouchableOpacity onPress={() => this.props.editNote(this.props.note)}>
                         <View style={{borderWidth: 2, borderColor: 'white', padding: 8, marginTop: 16, width: 100}}>
                             <Text style={{color: 'white', textAlign: 'center'}}>Edit Note</Text>
                         </View>

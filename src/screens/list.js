@@ -34,7 +34,7 @@ class List extends Component {
                 <View style={{flex: 1, padding: 32}}>
                     <Text style={{color: 'white', fontWeight:'bold', fontSize: 32, marginBottom: 8}}>Hi {this.props.user.username}!</Text>
                     <Text style={{color: 'white'}}>{moment().format('dddd, MMMM Do YYYY, h:mm a')}</Text>
-                    <TouchableOpacity>
+                    <TouchableOpacity onPress={() => this.props.newNote()}>
                         <View style={{borderWidth: 2, borderColor: 'white', padding: 8, marginTop: 16, width: 100}}>
                             <Text style={{color: 'white', textAlign: 'center'}}>New Note</Text>
                         </View>

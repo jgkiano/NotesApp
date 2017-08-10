@@ -5,7 +5,9 @@ import {
     FETCH_USER,
     NEW_USER,
     USER_INPUT,
-    SINGLE_NOTE_SELECT
+    SINGLE_NOTE_SELECT,
+    EDIT_NOTE,
+    NEW_NOTE
 } from '../types';
 
 const INITIAL_STATE = {
@@ -28,6 +30,10 @@ export default function( state = INITIAL_STATE, action ) {
             return { screen: "list" };
         case SINGLE_NOTE_SELECT:
             return { screen: "single" };
+        case EDIT_NOTE:
+            return { screen: "form" };
+        case NEW_NOTE:
+            return { screen: "form" };
         default:
             return INITIAL_STATE;
     }
