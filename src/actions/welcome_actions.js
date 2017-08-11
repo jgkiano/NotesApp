@@ -1,9 +1,12 @@
 import { AsyncStorage } from 'react-native';
+import axios from 'axios';
 import {
     USER_INPUT,
     REGISTER_SUCCESSFUL,
     REGISTER_FAIL
 } from '../types';
+
+const REGISTER_ENDPOINT = 'http://localhost:3000/notes/users';
 
 export const changeText = (text) => {
     return {
@@ -16,10 +19,11 @@ export const registerUser = (username) => async (dispatch) => {
     console.log(username);
     if(username !== "") {
         try {
-            await AsyncStorage.setItem("user", username);
+            const { data } = await axios.post(REGISTER_ENDPOINT, { username });
+            await AsyncStorage.setItem("user", JSON.stringify(data.user));
             dispatch({
                 type: REGISTER_SUCCESSFUL,
-                payload: username
+                payload: data.user.username
             });
             return;
         } catch (error) {

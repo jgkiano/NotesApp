@@ -12,7 +12,7 @@ export const getUser = () => async (dispatch) => {
         if (user) {
             dispatch({
                 type: FETCH_USER,
-                payload: user
+                payload: JSON.parse(user).username
             });
             return;
         }

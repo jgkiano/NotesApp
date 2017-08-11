@@ -1,14 +1,14 @@
-import moment from 'moment';
+import {
+    FETCH_NOTES
+} from '../types';
 const INITIAL_STATE = {
-    notesList: [
-        { id: 0, title: 'Note Item', location: 'Strathmore University', content:'bleh', timestamp: moment()},
-        { id: 1, title: 'Note Item', location: 'Strathmore University', content:'bleh', timestamp: moment()},
-        { id: 2, title: 'Note Item', location: 'Strathmore University', content:'bleh', timestamp: moment()}
-    ],
+    notesList: null
 }
 
 export default function(state = INITIAL_STATE, action) {
     switch (action.type) {
+        case FETCH_NOTES:
+            return { ...state, notesList: action.payload };
         default:
             return state;
     }

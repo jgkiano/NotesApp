@@ -7,3 +7,7 @@ export const REGISTER_FAIL = 'register_fail';
 export const SINGLE_NOTE_SELECT = 'single_note_select';
 export const EDIT_NOTE = 'edit_note';
 export const NEW_NOTE = 'new_note';
+export const FETCH_NOTES = 'fetch_notes';
+export const SAVE_NOTE = 'save_note';
+export const CHANGE_TITLE_TEXT = 'change_title_text';
+export const CHANGE_CONTENT_TEXT = 'change_content_text';

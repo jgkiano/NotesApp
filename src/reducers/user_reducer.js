@@ -1,11 +1,13 @@
 import {
     NEW_USER,
     FETCH_USER,
-    REGISTER_SUCCESSFUL
+    REGISTER_SUCCESSFUL,
+    FETCH_NOTES
 } from '../types';
 
 const INITIAL_STATE = {
-    username: null
+    username: null,
+    notesList: null
 }
 
 export default function ( state = INITIAL_STATE, action ) {
@@ -13,9 +15,11 @@ export default function ( state = INITIAL_STATE, action ) {
         case NEW_USER:
             return INITIAL_STATE;
         case FETCH_USER:
-            return { username: action.payload };
+            return { ...state, username: action.payload };
         case REGISTER_SUCCESSFUL:
-            return { username: action.payload };
+            return { ...state, username: action.payload };
+        case FETCH_NOTES:
+            return { ...state, notesList: action.payload };
         default:
             return INITIAL_STATE;
     }
