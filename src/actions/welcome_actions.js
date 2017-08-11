@@ -6,7 +6,7 @@ import {
     REGISTER_FAIL
 } from '../types';
 
-const REGISTER_ENDPOINT = 'http://localhost:3000/notes/users';
+const REGISTER_ENDPOINT = 'http://192.168.43.24:3000/notes/users';
 
 export const changeText = (text) => {
     return {

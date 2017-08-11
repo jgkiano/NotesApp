@@ -6,8 +6,8 @@ import {
     FETCH_USER
 } from '../types';
 
-const NOTES_ENDPOINT = 'http://localhost:3000/notes/';
-const USER_NOTES_ENDPOINT = 'http://localhost:3000/notes/users/';
+const NOTES_ENDPOINT = 'http://192.168.43.24:3000/notes/';
+const USER_NOTES_ENDPOINT = 'http://192.168.43.24:3000/notes/users/';
 
 export const editNote = (note) => {
     return {
@@ -21,7 +21,7 @@ export const deleteNote = (id) => async (dispatch) => {
     let userInfo = await AsyncStorage.getItem('user');
     userInfo = JSON.parse(userInfo);
     const user = userInfo._id;
-    const { data } = await axios.get(USER_NOTES_ENDPOINT + user);
+    const { data } = await axios.post(USER_NOTES_ENDPOINT + user);
     dispatch({ type: FETCH_NOTES, payload: data.notes });
     dispatch({ type: FETCH_USER, payload: userInfo.username });
 }
